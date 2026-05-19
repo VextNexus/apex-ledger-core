@@ -53,5 +53,14 @@ The system implements a "fail-fast" architecture:
 
 ---
 
+🤝 Credits & Acknowledgments
+To maintain full transparency for recruiters and tech reviewers:
+
+Backend & Core Architecture: Written entirely from scratch. The FastAPI microservice, custom database pooling, PostgreSQL SERIALIZABLE data consistency blocks, and financial invariant checks were designed and implemented independently.
+
+Frontend Development: Built with the assistance of Cursor AI. Next.js 14 layouts, Tailwind CSS styling, and client-side state management were accelerated using AI generation tools to allow maximum focus on backend integrity and performance.
+
+---
+
 ## 📝 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
