@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  bank_db:
+    image: postgres:16-alpine
+    container_name: bank_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: super_secret_password
+      POSTGRES_DB: apex_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bank_network
+  bank_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bank_fastapi
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:super_secret_password@bank_db:5432/apex_db
+    depends_on:
+      - bank_db
+    networks:
+      - bank_network
+
+volumes:
+  postgres_data:
+
+networks:
+  bank_network:
