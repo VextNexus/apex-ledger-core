@@ -37,7 +37,7 @@ The banking engine operates under strict transactional guarantees. Every state m
   "owner_name": "string",
   "initial_balance": 0.0000
 }
-
+```
 ---
 
 ## 🔐 Security & Transactional Integrity
